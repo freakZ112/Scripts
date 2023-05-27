@@ -33,7 +33,7 @@ var cBuildingTypes = cBuildingTypes || [];
 (async function () {
 	'use strict';
 
-    await $.getScript("https://raw.githubusercontent.com/freakZ112/libs/main/utf16convert.js");
+      await $.getScript("https://api.lss-cockpit.de/lib/utf16convert.js");
 
     if (!sessionStorage.cBuildings || JSON.parse(sessionStorage.cBuildings).lastUpdate < (new Date().getTime() - 5 * 1000 * 60) || JSON.parse(sessionStorage.cBuildings).userId != user_id) {
         await $.getJSON('/api/buildings').done(data => sessionStorage.setItem('cBuildings', JSON.stringify({ lastUpdate: new Date().getTime(), value: LZString.compressToUTF16(JSON.stringify(data)), userId: user_id })));
@@ -272,7 +272,7 @@ var cBuildingTypes = cBuildingTypes || [];
 	$('.nav.navbar-nav.navbar-right').append(`
 		<li class="dropdown" id="builActivate">
             <a href="#" id="menu_builActivate" role="button" class="dropdown-toggle" data-toggle="dropdown">
-              <span>Aktivierer</span>
+              <span>Gebäude</span>
             </a>
         </li>`);
 
