@@ -6,7 +6,6 @@
 // @include      *://www.leitstellenspiel.de/
 // @grant        none
 // ==/UserScript==
-
 async function sendPost(url) {
     await $.post(url,
 	{
@@ -33,7 +32,7 @@ var cBuildingTypes = cBuildingTypes || [];
 (async function () {
 	'use strict';
 
-      await $.getScript("https://api.lss-cockpit.de/lib/utf16convert.js");
+    await $.getScript("https://api.lss-cockpit.de/lib/utf16convert.js");
 
     if (!sessionStorage.cBuildings || JSON.parse(sessionStorage.cBuildings).lastUpdate < (new Date().getTime() - 5 * 1000 * 60) || JSON.parse(sessionStorage.cBuildings).userId != user_id) {
         await $.getJSON('/api/buildings').done(data => sessionStorage.setItem('cBuildings', JSON.stringify({ lastUpdate: new Date().getTime(), value: LZString.compressToUTF16(JSON.stringify(data)), userId: user_id })));
@@ -41,7 +40,7 @@ var cBuildingTypes = cBuildingTypes || [];
     var cBuildings = JSON.parse(LZString.decompressFromUTF16(JSON.parse(sessionStorage.cBuildings).value));
 
     if (!sessionStorage.cBuildingTypes || JSON.parse(sessionStorage.cBuildingTypes).lastUpdate < (new Date().getTime() - 5 * 1000 * 60) || JSON.parse(sessionStorage.cBuildingTypes).userId != user_id) {
-        await $.getJSON('https://raw.githubusercontent.com/freakZ112/libs/main/buildings.js').done(data => sessionStorage.setItem('cBuildingTypes', JSON.stringify({ lastUpdate: new Date().getTime(), value: LZString.compressToUTF16(JSON.stringify(data)), userId: user_id })));
+        await $.getJSON('https://raw.githubusercontent.com/freakZ112/libs/main/buildings.json').done(data => sessionStorage.setItem('cBuildingTypes', JSON.stringify({ lastUpdate: new Date().getTime(), value: LZString.compressToUTF16(JSON.stringify(data)), userId: user_id })));
     }
     var cBuildingTypes = JSON.parse(LZString.decompressFromUTF16(JSON.parse(sessionStorage.cBuildingTypes).value));
 
@@ -272,7 +271,7 @@ var cBuildingTypes = cBuildingTypes || [];
 	$('.nav.navbar-nav.navbar-right').append(`
 		<li class="dropdown" id="builActivate">
             <a href="#" id="menu_builActivate" role="button" class="dropdown-toggle" data-toggle="dropdown">
-              <span>Gebäude</span>
+              <span class="glyphicon glyphicon-home"></span>
             </a>
         </li>`);
 
