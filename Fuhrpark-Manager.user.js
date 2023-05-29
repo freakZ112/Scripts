@@ -2,7 +2,7 @@
 // @name         Fuhrpark-Manager
 // @version      5.0.1.
 // @author       freakZ112
-// @description  Zeigt den kompletten Fuhrpark, sowie diverse Statistiken - Logo designed by keks192221
+// @description  Zeigt den kompletten Fuhrpark, sowie diverse Statistiken
 // @include      *://www.leitstellenspiel.de/
 // @include      *://leitstellenspiel.de/
 // @grant        none
@@ -164,10 +164,9 @@ cursor: default;
         }
     };
 
-    //Logo designed by keks192221
     $("#navbar_profile_link")
         .parent()
-        .after(`<li role="presentation"><a style="cursor:pointer" id="vehicleManagement" data-toggle="modal" data-target="#tableStatus" ><img class="icon icons8-Share" src="https://cdn.discordapp.com/attachments/776141695741329498/791010038521004062/RTW_Icon_Furpark.png" width="24" height="24"> Fuhrpark-Manager</a></li>`);
+        .after(`<li role="presentation"><a style="cursor:pointer" id="vehicleManagement" data-toggle="modal" data-target="#tableStatus" ><img class="icon icons8-Share" src="https://www.rosenbauer.com/uploads/tx_rosenbauerfahrzeuguebergaben/Titelbild_Homepage_44.jpg" width="24" height="24"> Fuhrpark-Manager</a></li>`);
 
     for(var i = 0; i < options.dropdown.sort.length; i++){
         $('#sortBy').append(`<option value="${options.dropdown.sort[i]}">${options.dropdown.sort[i]}</option>`);
