@@ -74,75 +74,280 @@
 
         //------- FÜGE EINTRÄGE UNTERHALB EIN -------
 
-        {
-            buildingID: 11,
-            displayName: "1. Einsatzhundertschaft",
-            vehicles:[
-                [50,9],   //GruKw
-                [35,3],   //lBefKw
-                [51,1],   //FüKW
-                [52,1],   //GefKw
-            ]
-        },
-
-        {
-            buildingID: 11,
-            displayName: "voll besetzt",
-            vehicles:[
-                [50,9],   //GruKw
-                [35,4],   //lBefKw
-                [51,5],   //FüKW
-                [52,1],   //GefKw
-                [72,3],   //WaWe
-                [79,6],   //SEK - ZF
-                [80,2],   //SEK - MTF
-                [81,6],   //MEK - ZF
-                [82,2],   //MEK - MTF
-                [94,3],   //DHuFüKw
-            ]
-        },
-
-        {
-            buildingID: 11,
-            displayName: "voll besetzt ohne FüKW",
-            vehicles:[
-                [50,9],   //GruKw
-                [35,4],   //lBefKw
-                [52,1],   //GefKw
-                [72,3],   //WaWe
-                [79,6],   //SEK - ZF
-                [80,2],   //SEK - MTF
-                [81,6],   //MEK - ZF
-                [82,2],   //MEK - MTF
-                [94,3],   //DHuFüKw
-            ]
-        },
-
+// ID's
+//== Gebäude ==
+/*
+Feuerwache = 0
+Rettungswache = 2
+Hubschrauberstation = 5
+Polizeiwache = 6
+THW = 9
+BePol= 11
+SEG = 12
+Polizeihubschrauber = 13
+Wasserrettung = 15
+Sondereinheit = 17
+FW-klein = 18
+POL-klein = 19
+RD-klein = 20
+Rettungshundestaffel = 21
+*/
+//== Fahrzeuge ==
+//FEUERWEHR
+/*
+LF 20 = 0
+LF 20 = 1
+DLK = 2
+ELW 1 = 3
+RW = 4
+GWA = 5
+LF 8/6 = 6
+LF20/16 = 7
+LF 10/6 = 8
+LF 16 TS = 9
+GWÖl = 10
+GW L2-Wasser = 11
+GWM = 12
+SW1000 = 13
+SW2000 = 14
+SW2000 Tr = 15
+SW KatS = 16
+TLF2000 = 17
+TLF3000 = 18
+TLF 8/8 = 19
+TLF 8/18 = 20
+TLF 16/24 Tr = 21
+TLF 16/25 = 22
+TLF 16/45 = 23
+TLF 20/40 = 24
+TLF 20/40-SL = 25
+TLF 16 = 26
+GWG = 27
+HLF = 30
+GWH = 33
+ELW2 = 34
+MTF = 36
+TSF-W = 37
+WLF = 46
+DekonP = 53
+FWK = 57
+FLF = 75
+RT = 76
+GW-Werk = 83
+ULF = 84
+TM = 85
+Turbolöscher = 86
+TLF4000 = 87
+GW L1 = 104
+GW L2 = 105
+MTF-L = 106
+LF-L = 107
+Nea50 = 111
+Nea200 = 113
+*/
+//RETTUNGSDIENST
+/*
+RTW = 28
+NEF = 29
+RTH = 31
+KTW = 38
+Lna  = 55
+Orgl = 56
+Grtw = 73
+NAW = 74
+ITW = 97
+*/
+//POLIZEI
+/*
+Fustw = 32
+Lebefkw = 35
+GruKw = 50
+Fuekw = 51
+Gefkw = 52
+Pol-Hubschrauber = 61
+Wawe = 72
+SEKzf = 79
+SEKmtf = 80
+MEKzf = 81
+MEKmtf = 82
+Dhufükw = 94
+Motorrad = 95
+Außenlastbehälter = 96
+Zivilstreifenwagen = 98
+DGL = 103
+*/
+//THW
+/*
+Gkw = 39
+Mtwtz = 40
+Mzgwn = 41
+Lkwk9 = 42
+Brmgr = 43
+Dle = 44
+Mlw5 = 45
+Lkw7 = 65
+Lkw7 Plane	= 99
+Mlw4	= 100
+Schmutzwasserkreiselpumpe = 101
+Anhänger Plane = 102
+Mzgwsb = 109
+Nea50 = 110
+Nea200 = 112
+*/
+//SEG
+/*
+Ktwb = 58
+Elw1seg = 59
+Gwsan = 60
+GW T = 63
+GW W = 64
+Boot = 70
+Hund = 91
+*/
+//Wasserrettung
+/*
+Gwt = 63
+Gww = 64
+Boot = 70
+*/
         {
             buildingID: 0,
-            displayName: "Standardwache",
+            displayName: "FW15",
             vehicles:[
-                [30,5],   //HLF20
-                [23,1],   //TLF 16/45
-                [14,1],   //SW 2000
                 [2,1],   //DLK 23
                 [3,1],   //ELW 1
                 [5,1],   //GW-A
                 [10,1],   //GW-Öl
                 [12,1],   //GW-Mess
+				[14,1],   //SW 2000
                 [27,1],   //GW-Gefahrgut
                 [33,1],   //GW-H
                 [34,1],   //ELW 2
                 [53,1],   //Dekon-P
                 [57,1],   //FwK
+				[30,5],   //HLF20
             ]
         },
-
+	    {
+            buildingID: 0,
+            displayName: "Flughafen16",
+            vehicles:[
+                [75,6],   //FLF
+                [76,6],   //RT
+                [14,2],   //SW2000
+                [30,2],   //HLF
+				[87,1],   //TLF4000
+            ]
+        },	
+		{
+            buildingID: 0,
+            displayName: "WF16",
+            vehicles:[
+                [83,4],   //GW-Werk
+                [84,4],   //ULF
+                [85,4],   //TM
+                [86,4],   //Turbolöscher
+				[30,1],   //HLF20
+            ]
+        },	
+		{
+            buildingID: 2,
+            displayName: "RD14",
+            vehicles:[
+                [28,6],   //RTW
+                [29,6],   //NEF
+                [55,1],   //LNA
+				[56,1],   //ORGL
+				[74,1],   //NAW
+				
+            ]
+        },
+		{
+            buildingID: 6,
+            displayName: "POL15",
+            vehicles:[
+                [32,13],   //FuStW
+				[94,1],   //Dhufükw
+                [98,2],   //Zivil
+                [103,1],   //DGL
+            ]
+        },
+		{
+            buildingID: 9,
+            displayName: "THW",
+            vehicles:[
+                [39,2],   //GKW
+				[40,2],   //MTW TZ
+				[41,2],   //MZGWN
+				[42,1],   //LKW K9
+				[43,1],   //BRmG R
+				[44,1],   //DLE
+				[45,1],   //MLW 5
+				[99,2],   //LKW 7 Plane
+				[100,1],   //MLW 4
+				[101,1],   //Schmutzwasserkreiselpumpe
+				[102,1],   //Anhänger Plane
+				[109,1],   //MZGW SB
+				[110,2],   //NEA 50
+				[112,1],   //NEA 200
+            ]
+        },
+		{
+            buildingID: 11,
+            displayName: "BePol",
+            vehicles:[
+                [35,4],   //Lebefkw
+				[50,9],   //GruKw
+				[51,5],   //Fuekw
+				[52,1],   //Gefkw
+				[72,3],   //Wawe
+				[79,6],   //SEKzf
+				[80,2],   //SEKmtf
+				[81,2],   //MEKmtf
+				[82,6],   //MEKzf
+				[84,3],   //Dhufükw
+            ]
+        },
+		{
+            buildingID: 12,
+            displayName: "SEG",
+            vehicles:[
+                [28,1],   //RTW
+				[58,3],   //KTW
+				[59,1],   //ELW
+				[60,1],   //GW San
+				[91,2],   //Hund
+				[63,1],   //GW T
+				[64,1],   //GW W
+				[70,1],   //Boot
+            ]
+        },
+		{
+            buildingID: 15,
+            displayName: "WR",
+            vehicles:[
+                [63,2],   //GW T
+				[64,2],   //GW W
+				[70,2],   //Boot
+            ]
+        },
+		{
+            buildingID: 17,
+            displayName: "Sondereinheit",
+            vehicles:[
+				[51,4],   //Fuekw
+				[79,6],   //SEKzf
+				[80,2],   //SEKmtf
+				[81,2],   //MEKmtf
+				[82,6],   //MEKzf
+				[84,3],   //Dhufükw
+            ]
+        },
         //------- FÜGE EINTRÄGE OBERHALB EIN -------
     ];
 
 
-    const buildingsIDToIgnore = [4,7,1,3,8,10];
+    const buildingsIDToIgnore = [1,3,4,7,8,10,14,16];
 
 
     let buildingId = window.location.href;
