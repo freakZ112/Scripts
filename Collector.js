@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Collector
-// @version      1.0.3
+// @version      1.0.4
 // @author       freakZ112
 // @description  Sammelt die Eier, Kürbis etc. ein
 // @include      *://leitstellenspiel.de/missions/*
@@ -12,7 +12,7 @@
 (function() {
 'use strict';
 
-$('a[href*="halloweenhunt"], a[href*="easteregg"], a[href*="valentinescollection"]').click((e) => {
+$('a[href*="halloweenhunt"], a[href*="easteregg"], a[href*="valentinescollection", a[href*="claim_found_object_sync"]').click((e) => {
 event.preventDefault();
 var target = $(event.currentTarget);
 $.ajax({url: target.attr("href")});
@@ -33,4 +33,8 @@ if (halloweenhunt.length == 1){
 var valentinescollection = document.querySelectorAll('a[href*=valentinescollection]');
 if (valentinescollection.length == 1){
    valentinescollection[0].click();
+}
+var claim_found_object_sync = document.querySelectorAll('a[href*=claim_found_object_sync]');
+if (claim_found_object_sync.length == 1){
+   claim_found_object_sync[0].click();
 }
