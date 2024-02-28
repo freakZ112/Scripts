@@ -1,7 +1,7 @@
 // ==UserScript==
-// @name         Mission-Share
+// @name         Mission-Share NEW
 // @namespace
-// @version      1.0.0
+// @version      1.0.1
 // @author       freakZ112
 // @include      *://leitstellenspiel.de/*
 // @include      *://www.leitstellenspiel.de/*
@@ -11,7 +11,7 @@
 $(document).ready(function() {
   let AuthToken;
   let TimeSpan = 2500;
-  let minCredits=2500;// minimale credits
+  let minCredits=15000;// minimale credits
   function AlertMission(Index, Mission) {
 
         $.get(`missions/${Mission}`, function(Response){
@@ -54,9 +54,14 @@ $(document).ready(function() {
     });
 
     return Entities;
-  } // end function
+  } // end
 
-  $('div#btn-group-mission-select').append('<a href="#" id="mission-share" class="btn btn-xs mission_selection btn-warning">ALLE freigeben</a>');
+//  $('div#missionSpeed').append('<a href="#" id="mission-share" class="btn btn-xs mission_selection btn-info"><span class="glyphicon glyphicon-globe"></span> X</a>');
+$("#search_input_field_missions")
+        .after(`<a id="mission-share" class="btn btn-xs mission_selection btn-info"><span class="glyphicon glyphicon-globe"></span> X </a>`);
+
+
+
   $('a#mission-share').click(function() {
     console.log(`Missions found: ${GetMissions().length}`);
 
