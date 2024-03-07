@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         radioMessages
-// @version      1.0.0
+// @version      1.0.1
 // @author       freakZ112
 // @description  Sprechwünsche - da fliegen sie davon
 // @include      /^https?:\/\/(?:w{3}\.)?(?:leitstellenspiel\.de|(?:meldkamerspel|missionchief|missionchief-australia|nodsentralspillet|112-merkez|jogo-operador112|operador193|dyspetcher101-game|missionchief-japan|jocdispecerat112|missionchief-korea|hatakeskuspeli|dispecerske-centrum)\.com|missionchief\.co\.uk|centro-de-mando\.es|operatorratunkowy\.pl|larmcentralen-spelet\.se|operatore112\.it|operateur112\.fr|dispetcher112\.ru|alarmcentral-spil\.dk|operacni-stredisko\.cz|centro-de-mando\.mx)\/$/
@@ -286,7 +286,7 @@
         var speakVehicles = [];
         $('#radio_messages_important li:not(.radio_message_alliance)').each(function(){
             var vehicle = {};
-            var missionLink = $(this).find('a[href^="/missions/"]').attr('href');
+            var missionLink = $(this).find('a[href^="/missions/"]').attr('mission_id');
 
             vehicle.vehicleId = $(this).find('a[href^="/vehicles/"]').attr('href').replace('/vehicles/','');
 
