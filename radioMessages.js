@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         radioMessages
-// @version      1.0.2
+// @version      1.0.3
 // @author       freakZ112
 // @description  Sprechwünsche - da fliegen sie davon
 // @include      /^https?:\/\/(?:w{3}\.)?(?:leitstellenspiel\.de|(?:meldkamerspel|missionchief|missionchief-australia|nodsentralspillet|112-merkez|jogo-operador112|operador193|dyspetcher101-game|missionchief-japan|jocdispecerat112|missionchief-korea|hatakeskuspeli|dispecerske-centrum)\.com|missionchief\.co\.uk|centro-de-mando\.es|operatorratunkowy\.pl|larmcentralen-spelet\.se|operatore112\.it|operateur112\.fr|dispetcher112\.ru|alarmcentral-spil\.dk|operacni-stredisko\.cz|centro-de-mando\.mx)\/$/
@@ -240,12 +240,12 @@
                 var getVehicleTypeId = $('a[vehicle_type_id]', response);
 
 
-                if (l >= 0 && l < $selectCells.length) {
+//                if (l >= 0 && l < $selectCells.length) {
     // Stellen Sie sicher, dass $selectCells[l] definiert ist
     // Führen Sie hier den Code aus, der auf $selectCells[l] zugreift
-} else {
-    console.error("Index out of range or $selectCells is not defined");
-}
+//} else {
+//    console.error("Index out of range or $selectCells is not defined");
+//}
 
                 for(var k = 0; k < getVehicleTypeId.length; k++){
                     if(getVehicleTypeId[k].attributes[1].value === "52") {
@@ -295,7 +295,13 @@
         $('#radio_messages_important li:not(.radio_message_alliance)').each(function(){
             var vehicle = {};
             var missionLink = $(this).find('a[href^="/missions/"]').attr('href');
-            var shortenedLink = missionLink.slice(0, -38); // Entfernt die letzten 5 Zeichen des Links
+			var shortenedLink = missionLink.split("?")[0];
+            /* Alter Hotfix - noch als Backuplösung
+            var shortenedLink = missionLink.slice(0, -38); // Entfernt die letzten 38 Zeichen des Links
+            */
+            /* Abfrage des Linkes
+			console.log(shortenedLink);
+            */
 
             vehicle.vehicleId = $(this).find('a[href^="/vehicles/"]').attr('href').replace('/vehicles/','');
 
