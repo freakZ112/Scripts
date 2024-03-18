@@ -11,7 +11,7 @@
 $(document).ready(function() {
   let AuthToken;
   let TimeSpan = 2500;
-  let minCredits=15000;// minimale credits
+  let minCredits=2500;// minimale credits
   function AlertMission(Index, Mission) {
 
         $.get(`missions/${Mission}`, function(Response){
