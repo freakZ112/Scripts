@@ -1,12 +1,13 @@
 // ==UserScript==
 // @name         Personalzuweiser
 // @namespace    empty
-// @version      1.0.0.1
+// @version      1.0.0.2
 // @description  assign People with a button push
 // @author       freakZ112
 // @match        https://www.leitstellenspiel.de/vehicles/*/zuweisung
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=leitstellenspiel.de
 // @grant        none
+// @run-at       document-idle
 // ==/UserScript==
 
 (async function() {
@@ -92,7 +93,8 @@
         ["69","Taucher",2], //Tauchkraftwagen
         ["72","Wasserwerfer",5], //WaWe 10 ; Wasserwerfer
         ["73","Notarzt",6], //GRTW
-        ["74","Notarzt",3], //NAW
+        ["74","Notarzt",1], //NAW
+		["74","",2], //NAW
         ["75","Flugfeldlöschfahrzeug",3], //FLF ; Flugfeldlöschfahrzeug
         ["76","Rettungstreppe",2], //Rettungstreppe
         ["79","SEK",4], //SEK - ZF
@@ -122,9 +124,25 @@
         ["106","",6], //MTF-L
         ["107","",9], //LF-L
         ["109","FGr SB",9], //MzGW SB ; Schwere Bergung
+        ["114","",2], // GW-Lüfter
         ["122","FGr E",3], //LKW 7 E
         ["123","Fachgruppe Wasserschaden/Pumpen",3], //LKW 7 WP
+		["124","",7], //MTW-OV
+		["125","Tr UL",4], //MTW-Tr UL
+        ["126","Drohnen-Schulung",5], //MTW Drohne
+        ["127","SEG Drohne",4], //GW UAS
+        ["128","Drohnen-Schulung",5], //ELW Drohne
+        ["129","Drohnen-Schulung",5], //ELW2 Drohne
+        ["130","Verpflegungshelfer",2], //GW-Bt
+       ["130","Betreuungshelfer",1], //GW-Bt
+        ["131","Betreuungshelfer",9], //Bt-Kombi
+        ["133","Verpflegungshelfer",2], //Bt LKW
+        ["133","Betreuungshelfer",1], //Bt LKW
     ];
+
+
+    //pause between button presses. z.B. 1000 for 1 second pause between presses. 750 for 0.75 seconds pause between presses
+    var pressDelay = 1;
 
 
      //------- after here change only stuff if you know what you are doing -------
