@@ -295,11 +295,15 @@ overflow-y: auto;
               </div>
             </div>`);
 
-    $("ul .dropdown-menu[aria-labelledby='menu_profile'] >> a[href='/missionSpeed']")
+//    $("ul .dropdown-menu[aria-labelledby='menu_profile'] >> a[href='/missionSpeed']")
+//        .parent()
+//        .after(`<li role="presentation"><a data-toggle="modal" data-target="#veChModal" style="cursor:pointer" id="veChOpenModal">
+//                    <span class="glyphicon glyphicon-cog"></span> Fahrzeugeinstellungen</a>
+//                </li>`);
+  $("#navbar_profile_link")
         .parent()
-        .after(`<li role="presentation"><a data-toggle="modal" data-target="#veChModal" style="cursor:pointer" id="veChOpenModal">
-                    <span class="glyphicon glyphicon-cog"></span> Fahrzeugeinstellungen</a>
-                </li>`);
+        .after(`<li role="presentation"><a style="cursor:pointer" id="toggleRmModal" data-toggle="modal" data-target="#veChModal" ><span class="glyphicon glyphicon-cog"></span> Fahrzeugeinstellungen</a></li>`);
+
 
     $("body").on("click", ".ve_ch_btn_trigger", async function () {
         const target = $(this).attr("target"),
