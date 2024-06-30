@@ -25,10 +25,10 @@
         ---------
         */
 
-        //{
-        //    buildingID: 0, //FW
-        //    sequence: [16,14]
-        //},
+        {
+            buildingID: 0, //FW
+            sequence: [16,14]
+        },
 
         {
             buildingID: 1, //FW-Schule
