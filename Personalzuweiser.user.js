@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Personalzuweiser
 // @namespace    empty
-// @version      1.0.0.2
+// @version      1.0.0.3
 // @description  assign People with a button push
 // @author       freakZ112
 // @match        https://www.leitstellenspiel.de/vehicles/*/zuweisung
@@ -94,7 +94,7 @@
         ["72","Wasserwerfer",5], //WaWe 10 ; Wasserwerfer
         ["73","Notarzt",6], //GRTW
         ["74","Notarzt",1], //NAW
-		["74","",2], //NAW
+	["74","",2], //NAW
         ["75","Flugfeldlöschfahrzeug",3], //FLF ; Flugfeldlöschfahrzeug
         ["76","Rettungstreppe",2], //Rettungstreppe
         ["79","SEK",4], //SEK - ZF
@@ -109,7 +109,7 @@
         ["88","",6], //KLF
         ["89","",6], //MLF
         ["90","",9], //HLF10
-        ["91","Rettungshundeführer (SEG)",5], //Rettungshundefahrzeug SEG
+        ["91","Rettungshundeführer",5], //Rettungshundefahrzeug SEG
         ["93","Rettungshundeführer (THW)",5], //Rettungshundefahrzeug THW
         ["94","Hundeführer (Schutzhund)",2], //DHuFüKw
         ["95","Motorradstaffel",1], //Polizeimotorrad
@@ -127,17 +127,22 @@
         ["114","",2], // GW-Lüfter
         ["122","FGr E",3], //LKW 7 E
         ["123","Fachgruppe Wasserschaden/Pumpen",3], //LKW 7 WP
-		["124","",7], //MTW-OV
-		["125","Tr UL",4], //MTW-Tr UL
+	["124","",7], //MTW-OV
+	["125","Tr UL",4], //MTW-Tr UL
         ["126","Drohnen-Schulung",5], //MTW Drohne
-        ["127","SEG Drohne",4], //GW UAS
+        ["127","Drohnenoperator",4], //GW UAS
         ["128","Drohnen-Schulung",5], //ELW Drohne
         ["129","Drohnen-Schulung",5], //ELW2 Drohne
         ["130","Verpflegungshelfer",2], //GW-Bt
-       ["130","Betreuungshelfer",1], //GW-Bt
+        ["130","Betreuungshelfer",1], //GW-Bt
         ["131","Betreuungshelfer",9], //Bt-Kombi
         ["133","Verpflegungshelfer",2], //Bt LKW
         ["133","Betreuungshelfer",1], //Bt LKW
+        //
+        ["144","Fachzug Führung und Kommunikation",4], //FüKW (THW)
+        ["145","Fachzug Führung und Kommunikation",7], //FüKomKW
+        ["147","Fachzug Führung und Kommunikation",7], //FmKW
+        ["148","Fachzug Führung und Kommunikation",4], //MTW-FGr K
     ];
 
 
